@@ -1,11 +1,10 @@
 import { combineReducers } from "redux";
 import searchReducer from "./search";
-import { summonerReducer, leagueReducer } from "./userInfo";
+import summonerReducer from "./summoner";
 
 const rootReducer = combineReducers({
     search: searchReducer,
-    summoner: summonerReducer,
-    league: leagueReducer
+    summoner: summonerReducer
 })
 
 export type reducerType = ReturnType<typeof rootReducer>;
