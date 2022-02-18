@@ -1,54 +1,43 @@
-export interface SummonersResponseType {
-    id: string;
-    accountId: string;
-    puuid: string;
-    name: string;
-    profileIconId: number;
-    revisionDate: number;
-    summonerLevel: number;
-}
-export interface SummonerGameResponseType {
-    statusCode: number;
-    tft?: {
-        queueType: string;
-        summonerId: string;
-        summonerName: string;
-        leaguePoints: number;
-        wins: number;
-        losses: number;
-        veteran: boolean;
-        inactive: boolean;
-        freshBlood: boolean;
-        hotStreak: boolean;
+export interface SummonerInfoResponseType {
+    league: {
+        flex: {
+            freshBlood: boolean;
+            hotStreak: boolean;
+            inactive: boolean
+            leagueId: string
+            leaguePoints: number
+            losses: number
+            queueType: string
+            rank: string
+            summonerId: string
+            summonerName: string
+            tier: string
+            veteran: boolean
+            wins: number
+        }
+        solo: {
+            freshBlood: boolean;
+            hotStreak: boolean;
+            inactive: boolean
+            leagueId: string
+            leaguePoints: number
+            losses: number
+            queueType: string
+            rank: string
+            summonerId: string
+            summonerName: string
+            tier: string
+            veteran: boolean
+            wins: number
+        }
     }
-    solo?: {
-        leagueId: string;
-        queueType: string;
-        tier: string;
-        rank: string;
-        summonerId: string;
-        summonerName: string;
-        leaguePoints: number;
-        wins: number;
-        losses: number;
-        veteran: boolean;
-        inactive: boolean;
-        freshBlood: boolean;
-        hotStreak: boolean;
-    }
-    flex?: {
-        leagueId: string;
-        queueType: string;
-        tier: string;
-        rank: string;
-        summonerId: string;
-        summonerName: string;
-        leaguePoints: number;
-        wins: number;
-        losses: number;
-        veteran: boolean;
-        inactive: boolean;
-        freshBlood: boolean;
-        hotStreak: boolean;
+    summoner: {
+        accountId: string
+        id: string
+        name: string
+        profileIconId: number
+        puuid: string
+        revisionDate: number
+        summonerLevel: number
     }
 }
