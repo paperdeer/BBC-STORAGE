@@ -37,8 +37,8 @@ module.exports.summonerInfo = async (req, res) => {
     } catch (err) {
         console.log(err)
         res.send({
-            summoner: summoner.data,
-            league: league.data
+            summoner: {},
+            league: {}
         })
     }
 
