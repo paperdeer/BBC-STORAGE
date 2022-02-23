@@ -12,7 +12,4 @@ export const ReverseArray = (array: any[]) => {
 
 export const getSummonerInfo = async (summonerName: string) => {
     return await userApi.getSummonerByName(summonerName)
-    // .then((res: AxiosResponse<SummonerInfoResponseType>) => {
-
-    // })
 }
