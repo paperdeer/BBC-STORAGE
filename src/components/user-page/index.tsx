@@ -3,9 +3,9 @@ import * as S from './styles';
 import { useQuery } from "../../util/hooks/useQuery";
 import { useNavigate } from "react-router-dom";
 import useSearch from "../../util/hooks/useSummonerInfo/useSearch";
-import { getSummonerInfo } from '../../util/util/reverseArray';
 import { useDispatch } from 'react-redux';
 import { setSummonerName } from '../../modules/redux/action/summoner';
+import requester from '../../util/api/axios/axios';
 
 const UserPage: React.FC = (): any => {
     const query = useQuery()
@@ -17,7 +17,8 @@ const UserPage: React.FC = (): any => {
         () => {
             if (userName === null || userName === "") return navigate("/");
             dispatch(setSummonerName(userName))
-        }, []
+            requester(`/user/match?puuid=${summonerState.state?.summoner.puuid}`)
+        }, [userName]
     )
     return (
         <S.Wrapper>
